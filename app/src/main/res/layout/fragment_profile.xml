@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4C724"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProfile"
+        android:background="@color/white"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtViewProfileCuberName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuber name"
+                android:textSize="20sp"
+                android:textColor="#F4C724"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="40dp"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileNoSolves"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="#FBD28B"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileCuberName"
+                app:layout_constraintLeft_toRightOf="@+id/txtViewProfileNoSolvestxt"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileNoSolvestxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total number of solves:"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileCuberName"
+                android:layout_marginLeft="20dp"
+                android:textColor="#F3B431"
+                android:layout_marginTop="50dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileBestSolve"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="0:00:00"
+                android:textSize="18sp"
+                android:textColor="#FBD28B"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileNoSolvestxt"
+                app:layout_constraintLeft_toRightOf="@+id/txtViewProfileBestSolvetxt"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileBestSolvetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best Solve in the app:"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileNoSolvestxt"
+                android:layout_marginLeft="20dp"
+                android:textColor="#F3B431"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileNoFriends"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="#FBD28B"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileBestSolvetxt"
+                app:layout_constraintLeft_toRightOf="@+id/txtViewProfileNoFriendstxt"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileNoFriendstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total number of freinds:"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileBestSolvetxt"
+                android:layout_marginLeft="20dp"
+                android:textColor="#F3B431"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:id="@+id/txtViewProfileLeaderboardRanktxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Leaderboard Rank:"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileNoFriendstxt"
+                android:layout_marginLeft="20dp"
+                android:textColor="#F3B431"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:id="@+id/LeaderboardRank"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="#0"
+                android:textSize="18sp"
+                android:textColor="#FBD28B"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewProfileNoFriendstxt"
+                app:layout_constraintLeft_toRightOf="@+id/txtViewProfileLeaderboardRanktxt"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#F3B431"
+        android:text="Logout"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
