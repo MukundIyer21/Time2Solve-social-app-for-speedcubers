@@ -7,17 +7,20 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ## Introduction
 This repository contains the source code for a Rubik's Cube solver and a social app designed for speedcubers. The app includes functionalities such as timing solves, generating random scrambles, and verifying solves using a computer vision model. Check the leaderboard of the top 50 solves.
+
+![App Screenshot](images/imgs1.png)
+![App Screenshot](images/imgs2.png)
 
 ## Features
 - **Rubik's Cube Solver**: Detects cube colors using a TensorFlow Lite model and solves the cube.
 - **Speedcubing Timer**: Times your solves with millisecond precision.
 - **Scramble Generator**: Generates random scrambles for practice.
 - **Solve Verification**: Verifies solves using a computer vision model deployed with FastAPI.
+- **Social Features**: Allows users to view friends' profiles and check the global leaderboard.
 - **User Authentication**: Utilizes Firebase Authentication for secure sign-in.
 
 ## Technologies Used
@@ -26,7 +29,7 @@ This repository contains the source code for a Rubik's Cube solver and a social 
 - **FastAPI**: For deploying the computer vision model.
 - **Firebase Firestore**: For storing user information.
 - **Firebase Authentication**: For user authentication.
-- **Ultralytics**: For training the model.
+- **Ultralytics**: For training the TensorFlow Lite model.
 - **Camera2 API**: For accessing the camera in Android.
 
 ## Installation
@@ -79,6 +82,7 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
+
 
 ## Acknowledgements
 - Special thanks to the creators of TensorFlow Lite, FastAPI, and Firebase for their excellent tools.
