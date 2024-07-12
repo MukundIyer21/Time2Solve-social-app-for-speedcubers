@@ -6,10 +6,10 @@
         android:icon="@drawable/ic_timer"
         android:title="Timer" />
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_versus"
-        android:title="Versus" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_dashboard"-->
+<!--        android:icon="@drawable/ic_versus"-->
+<!--        android:title="Versus" />-->
 
     <item
         android:id="@+id/navigation_notifications"

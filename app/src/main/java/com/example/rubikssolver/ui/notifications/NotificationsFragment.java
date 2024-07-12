@@ -50,8 +50,6 @@ public class NotificationsFragment extends Fragment {
         View root = binding.getRoot();
 
         leaderboardProgressbar = binding.leaderboardProgressbar;
-        leaderboardProgressbar.setVisibility(View.VISIBLE);
-
 
 
         rvLeaderboard = binding.recyclerLeaderBoard;
@@ -61,7 +59,6 @@ public class NotificationsFragment extends Fragment {
 
         fetchTopSolves();
 
-        leaderboardProgressbar.setVisibility(View.GONE);
 
         return root;
     }
@@ -74,6 +71,7 @@ public class NotificationsFragment extends Fragment {
 
 
     private void fetchTopSolves(){
+        leaderboardProgressbar.setVisibility(View.VISIBLE);
         Query query = FirebaseFirestore.getInstance()
                 .collection("solves")
                 .orderBy("durationMinutes", Query.Direction.ASCENDING)
@@ -86,6 +84,7 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if(error!=null){
+                    leaderboardProgressbar.setVisibility(View.GONE);
                     return;
                 }
                 List<Solve> solves = new ArrayList<>();
@@ -95,6 +94,7 @@ public class NotificationsFragment extends Fragment {
                 }
                 Log.d("solves",solves.toString());
                 adapter.updateData(solves);
+                leaderboardProgressbar.setVisibility(View.GONE);
             }
         });
     }

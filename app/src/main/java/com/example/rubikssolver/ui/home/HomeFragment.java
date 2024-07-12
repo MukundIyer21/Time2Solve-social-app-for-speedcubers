@@ -106,10 +106,10 @@ public class HomeFragment extends Fragment {
         progressBarScramble = binding.progressBarScramble;
 
 
-        progressBarScramble.setVisibility(View.VISIBLE);
+
         apiService = RetrofitClient.getClient().create(ApiService.class);
         boolean b =  getScramble();
-        progressBarScramble.setVisibility(View.GONE);
+
 
         handler = new Handler(Looper.getMainLooper());
 
@@ -292,11 +292,13 @@ public class HomeFragment extends Fragment {
 
     }
     private boolean getScramble(){
+        progressBarScramble.setVisibility(View.VISIBLE);
         boolean[] successfulApicall = {false};
         Call<ScrambleResponse> call = apiService.getScramble();
         call.enqueue(new Callback<ScrambleResponse>() {
             @Override
             public void onResponse(Call<ScrambleResponse> call, Response<ScrambleResponse> response) {
+                progressBarScramble.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
                     ScrambleResponse scrambleResponse = response.body();
                     if (scrambleResponse != null) {
@@ -316,6 +318,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ScrambleResponse> call, Throwable t) {
+                progressBarScramble.setVisibility(View.GONE);
                 Log.d("apiError","Network Error"+t.getMessage());
             }
         });
